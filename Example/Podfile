@@ -1,0 +1,13 @@
+platform :ios, '9.0'
+
+use_frameworks!
+
+target 'GradientMaster_Example' do
+  pod 'GradientMaster', :path => '../'
+
+  target 'GradientMaster_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

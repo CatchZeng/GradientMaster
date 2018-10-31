@@ -1,0 +1,6 @@
+framework module GradientMaster {
+  umbrella header "GradientMaster-umbrella.h"
+
+  export *
+  module * { export * }
+}
