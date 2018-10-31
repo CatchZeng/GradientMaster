@@ -21,28 +21,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EnT-Sx-WHa" customClass="GradientView" customModule="GradientMaster">
-                                <rect key="frame" x="67.5" y="213.5" width="240" height="240"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EnT-Sx-WHa" customClass="GradientMasterView" customModule="GradientMaster">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="240" id="85o-eC-Eu4"/>
-                                    <constraint firstAttribute="width" constant="240" id="Y4h-Ut-32j"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="EnT-Sx-WHa" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="04q-O4-MGk"/>
-                            <constraint firstItem="EnT-Sx-WHa" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="EDn-2r-Lbu"/>
+                            <constraint firstAttribute="trailing" secondItem="EnT-Sx-WHa" secondAttribute="trailing" id="QOz-2C-ozu"/>
+                            <constraint firstItem="EnT-Sx-WHa" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="lLS-O6-EbN"/>
+                            <constraint firstAttribute="bottom" secondItem="EnT-Sx-WHa" secondAttribute="bottom" id="mPn-xC-ciA"/>
+                            <constraint firstItem="EnT-Sx-WHa" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="yTe-Em-R47"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="gridientView" destination="EnT-Sx-WHa" id="YOI-mq-SRz"/>
+                        <outlet property="gradientView" destination="EnT-Sx-WHa" id="YOI-mq-SRz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-55" y="95"/>
+            <point key="canvasLocation" x="-1647.2" y="-42.728635682158924"/>
         </scene>
     </scenes>
 </document>

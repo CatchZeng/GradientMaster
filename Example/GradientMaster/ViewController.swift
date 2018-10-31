@@ -11,15 +11,10 @@ import GradientMaster
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var gridientView: GradientView!
+    @IBOutlet weak var gradientView: GradientMasterView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupGradient()
-    }
-    
-    private func setupGradient() {
-        
+        gradientView.startAnimation()
     }
 }
-
