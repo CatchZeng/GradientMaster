@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 public enum Direction: Int {
     case vertical = 0
@@ -13,12 +14,21 @@ public enum Direction: Int {
 }
 
 extension Direction {
+    fileprivate var start: CGPoint {
+        switch self {
+        case .vertical:
+            return CGPoint(x: 0.0, y: 0.0)
+        case .horizontal:
+            return CGPoint(x: 0.0, y: 0.0)
+        }
+    }
+    
     fileprivate var end: CGPoint {
         switch self {
-        case .horizontal:
-            return CGPoint(x: 1.0, y: 0.0)
         case .vertical:
             return CGPoint(x: 0.0, y: 1.0)
+        case .horizontal:
+            return CGPoint(x: 1.0, y: 0.0)
         }
     }
 }
@@ -73,6 +83,7 @@ open class GradientMasterView: UIView {
     
     open var direction: Direction = .vertical {
         didSet {
+            gradientLayer.startPoint = direction.start
             gradientLayer.endPoint = direction.end
             gradientLayer.setNeedsDisplay()
         }
@@ -87,12 +98,13 @@ open class GradientMasterView: UIView {
     
     public let gradientLayer = CAGradientLayer()
     
-    open var animationDuration: TimeInterval = 5.0
+    public var animationDuration: TimeInterval = 3.0
+    
     private struct Animation {
         static let keyPath = "colors"
         static let key = "ColorChange"
     }
-    private var index: Int = 0
+    private var colorIndex: Int = 0
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -105,7 +117,9 @@ open class GradientMasterView: UIView {
     }
     
     private func commInit() {
-        gradientLayer.colors = genCGColors()
+        gradientLayer.colors = colors.map({ (color) -> CGColor in
+            return color.cgColor
+        })
         gradientLayer.drawsAsynchronously = true
         layer.insertSublayer(gradientLayer, at: 0)
         gradientLayer.setNeedsDisplay()
@@ -113,15 +127,17 @@ open class GradientMasterView: UIView {
     
     public func startAnimation() {
         gradientLayer.removeAllAnimations()
-        animateGradient()
+        gradientLayer.colors = genCGColors()
+        gradientLayer.setNeedsDisplay()
+        doAnimation()
     }
     
     public func stopAnimation() {
         gradientLayer.removeAllAnimations()
     }
     
-    fileprivate func animateGradient() {
-        index += 1
+    fileprivate func doAnimation() {
+        colorIndex += 1
         let animation = CABasicAnimation(keyPath: Animation.keyPath)
         animation.duration = animationDuration
         animation.toValue = genCGColors()
@@ -132,10 +148,14 @@ open class GradientMasterView: UIView {
     }
     
     fileprivate func genCGColors() -> [CGColor] {
-        if colors.count < 2 { return [] }
+        let count = colors.count
+        if count < 2 {
+            return []
+        }
         
-        return [colors[index % colors.count].cgColor,
-                colors[(index + 1) % colors.count].cgColor]
+        let color1 = colors[colorIndex % count].cgColor
+        let color2 = colors[(colorIndex + 1) % count].cgColor
+        return [color1, color2]
     }
     
     open override func layoutSubviews() {
@@ -154,7 +174,7 @@ extension GradientMasterView: CAAnimationDelegate {
     public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         if flag {
             gradientLayer.colors = genCGColors()
-            animateGradient()
+            doAnimation()
         }
     }
 }
