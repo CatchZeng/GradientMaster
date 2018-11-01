@@ -1,9 +1,17 @@
 # GradientMaster
 
-[![CI Status](https://img.shields.io/travis/catchzeng/GradientMaster.svg?style=flat)](https://travis-ci.org/catchzeng/GradientMaster)
 [![Version](https://img.shields.io/cocoapods/v/GradientMaster.svg?style=flat)](https://cocoapods.org/pods/GradientMaster)
 [![License](https://img.shields.io/cocoapods/l/GradientMaster.svg?style=flat)](https://cocoapods.org/pods/GradientMaster)
 [![Platform](https://img.shields.io/cocoapods/p/GradientMaster.svg?style=flat)](https://cocoapods.org/pods/GradientMaster)
+
+A IBDesignable UIView class with a gradient rendered and customizable in the storyboard (effect, direction,...) and support gradient animation.
+
+## Usage
+
+### IBDesignable
+
+### Animation
+
 
 ## Example
 

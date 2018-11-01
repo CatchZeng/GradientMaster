@@ -9,14 +9,14 @@ import Foundation
 import UIKit
 
 @objc public enum GradientEffect: Int {
-    case happy
-    case warm
-    case life
-    case rain
-    case wind
-    case sunny
-    case young
-    case sunset
+    case happy = 0
+    case warm = 1
+    case life = 2
+    case rain = 3
+    case wind = 4
+    case sunny = 5
+    case young = 6
+    case sunset = 7
 }
 
 extension GradientEffect {

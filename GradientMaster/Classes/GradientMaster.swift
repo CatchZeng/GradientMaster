@@ -44,22 +44,6 @@ open class GradientMasterView: UIView {
         }
     }
     
-    @IBInspectable open var ibType: Int = 0 {
-        didSet {
-            if ibType == 0 {
-                self.type = .axial
-            } else if ibType == 1 {
-                self.type = .radial
-            } else {
-                if #available(iOS 12.0, *) {
-                    self.type = .conic
-                } else {
-                    print("conic is only for iOS 12.0.")
-                }
-            }
-        }
-    }
-    
     @IBInspectable open var ibEffect: Int = 0 {
         didSet {
             if let effect = GradientEffect.init(rawValue: ibEffect) {
@@ -74,13 +58,6 @@ open class GradientMasterView: UIView {
         }
     }
     
-    open var type: CAGradientLayerType = .axial {
-        didSet {
-            gradientLayer.type = type
-            gradientLayer.setNeedsDisplay()
-        }
-    }
-    
     open var direction: Direction = .vertical {
         didSet {
             gradientLayer.startPoint = direction.start
@@ -91,7 +68,9 @@ open class GradientMasterView: UIView {
     
     open var colors: [UIColor] = GradientEffect.happy.colors {
         didSet {
-            gradientLayer.colors = genCGColors()
+            gradientLayer.colors = colors.map({ (color) -> CGColor in
+                return color.cgColor
+            })
             gradientLayer.setNeedsDisplay()
         }
     }

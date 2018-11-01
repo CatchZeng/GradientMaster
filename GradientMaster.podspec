@@ -9,8 +9,8 @@
 Pod::Spec.new do |s|
   s.name             = 'GradientMaster'
   s.version          = '0.1.0'
-  s.summary          = 'GradientMaster for iOS.'
-  s.description      = 'iOS gradient effect util.'
+  s.summary          = 'A simple and powerful gradient view.'
+  s.description      = 'A IBDesignable UIView class with a gradient rendered and customizable in the storyboard (effect, direction...) and support gradient animation.'
   s.homepage         = 'https://github.com/catchzeng/GradientMaster'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'catchzeng' => '891793848@qq.com' }

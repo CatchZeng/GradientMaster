@@ -1,8 +1,8 @@
 {
   "name": "GradientMaster",
   "version": "0.1.0",
-  "summary": "GradientMaster for iOS.",
-  "description": "iOS gradient effect util.",
+  "summary": "A simple and powerful gradient view.",
+  "description": "A IBDesignable UIView class with a gradient rendered and customizable in the storyboard (effect, direction...) and support gradient animation.",
   "homepage": "https://github.com/catchzeng/GradientMaster",
   "license": {
     "type": "MIT",
