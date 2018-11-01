@@ -9,6 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'GradientMaster'
   s.version          = '0.1.0'
+  s.swift_version    = '4.2'
   s.summary          = 'A simple and powerful gradient view.'
   s.description      = 'A IBDesignable UIView class with a gradient rendered and customizable in the storyboard (effect, direction...) and support gradient animation.'
   s.homepage         = 'https://github.com/catchzeng/GradientMaster'
