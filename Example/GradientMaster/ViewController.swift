@@ -15,6 +15,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        gradientView.animationDuration = 5.0
         gradientView.startAnimation()
+        
+        self.perform(#selector(stop), with: nil, afterDelay: 5.0)
+    }
+    
+    @objc private func stop() {
+        gradientView.stopAnimation()
     }
 }

@@ -10,7 +10,35 @@ A IBDesignable UIView class with a gradient rendered and customizable in the sto
 
 ### IBDesignable
 
+![](https://github.com/CatchZeng/GradientMaster/blob/master/IBDesignable.gif?raw=true)
+
+* Set the class to GradientMasterView.
+* Customizable direction and effect you like.
+* Run it.
+
+
 ### Animation
+
+![](https://github.com/CatchZeng/GradientMaster/blob/master/animation.gif?raw=true) ![](https://github.com/CatchZeng/GradientMaster/blob/master/animation2.gif?raw=true)
+
+#### Set animation duration.
+
+```
+gradientView.animationDuration = 5.0
+```
+
+#### Start animation.
+
+```
+gradientView.startAnimation()
+```
+
+#### Stop animation.
+
+```
+gradientView.stopAnimation()
+```
+
 
 
 ## Example
